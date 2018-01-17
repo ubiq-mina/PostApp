@@ -23,18 +23,24 @@
 
                 <div class="panel-body">
 
-                    @foreach($posts as $post)
-                        <div class="card card-body mb-3">
-                            <h4 class="card-title">
-                                {{--  What<br>  --}}
-                                <a href=#>Hello World</a>
-                            </h4>
-                            
-                            <p class="card-text">
-                                {{ $post->content }}
-                            </p>
-                        </div>
-                    @endforeach
+                    @if (isset($posts))
+                        @foreach($posts as $post)
+                            <div class="card card-body mb-3">
+                                <h4 class="card-title">
+                                    {{--  What<br>  --}}
+                                    <a href=#>Hello World</a><br/>
+                                    <small>
+                                        {{--  {{ Carbon\Carbon::parse($post->created_at)->format('F d, Y') }}  --}}
+                                        {{ Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->diffForHumans() }}
+                                    </small>
+                                </h4>
+                                
+                                <p class="card-text">
+                                    {{ $post->content }}
+                                </p>
+                            </div>
+                        @endforeach
+                    @endif
 
                 </div>
             </div>

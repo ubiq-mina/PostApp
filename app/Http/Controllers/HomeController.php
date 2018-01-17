@@ -26,19 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('updated_at', 'desc')->get();
         // return view('home');
+
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return View::make('home')->with('posts', $posts);
-        // $users = User::all();
-
-        // foreach($users as $user) {
-
-        //     echo $user->username;
-        // }
-
-
-        // foreach($posts as $post) {
-        //     echo $post->content . '<br/><br/>';
-        // }
     }
 }
