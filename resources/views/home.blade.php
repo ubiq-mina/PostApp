@@ -21,7 +21,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Newsfeed</div>
 
-                <div class="panel-body">
+                <div class="panel-body infinite-scroll">
 
                     @if (isset($posts))
                         @foreach($posts as $post)
@@ -31,7 +31,7 @@
                                     <a href=#>Hello World</a><br/>
                                     <small>
                                         {{--  {{ Carbon\Carbon::parse($post->created_at)->format('F d, Y') }}  --}}
-                                        {{ Carbon\Carbon::createFromTimeStamp(strtotime($post->created_at))->diffForHumans() }}
+                                        {{ $post->created_at->diffForHumans() }}
                                     </small>
                                 </h4>
                                 

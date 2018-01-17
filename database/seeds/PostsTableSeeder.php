@@ -12,7 +12,7 @@ class PostsTableSeeder extends Seeder
     public function run()
     {
         //
-        $post = factory(PostApp\Post::class)->create([
+        $post = factory(PostApp\Post::class, 50)->create([
             'user_id' => '2',
         ]);
     }
