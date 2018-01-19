@@ -50,7 +50,7 @@
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->username }} <span class="caret"></span>
+                                    {{ Auth::user()->username }}
                                 </a>
 
                                 <ul class="dropdown-menu">
