@@ -87,18 +87,22 @@
     <!-- Latest compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     
-    <script src="{{ asset('js/jquery.jscroll.js') }}"></script>
+    {{--  <script src="{{ asset('js/jquery.jscroll.js') }}"></script>  --}}
 
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="/js/jquery.jscroll.js"></script>
 
     <script type="text/javascript">
         $('ul.pagination').hide();
         $(function() {
             $('.infinite-scroll').jscroll({
+                debug: true,
                 autoTrigger: true,
-                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
+                {{--  loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',  --}}
+                loadingHtml: '<small class="text-center">Loading...</small>',
                 padding: 0,
-                nextSelector: '.pagination li.active + li a',
+                nextSelector: '.pagination li a',
                 contentSelector: 'div.infinite-scroll',
                 callback: function() {
                     $('ul.pagination').remove();
