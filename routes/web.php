@@ -15,8 +15,9 @@
 //     return view('home');
 // });
 
-Route::get('login', 'LoginController@create')->name('login.create');
-Route::post('login', 'LoginController@store')->name('login.store');
+// Route::get('login', 'LoginController@create')->name('login.create');
+// Route::post('login', 'LoginController@store')->name('login.store');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
