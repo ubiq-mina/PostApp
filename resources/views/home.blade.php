@@ -34,17 +34,22 @@
                     <div class="infinite-scroll">
                         @if (isset($posts))
                             @foreach($posts as $post)
-                                <div class="card card-body mb-3">
-                                    <h4 class="card-title">
-                                        <a href=#>Hello World</a><br/>
-                                        <small>
-                                            {{ $post->created_at->diffForHumans() }}
-                                        </small>
-                                    </h4>
-                                    
-                                    <p class="card-text">
-                                        {{ $post->content }}
-                                    </p>
+                                <div class="card mb-3">
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href=#>Hello World</a><br/>
+                                            <small>
+                                                {{ $post->created_at->diffForHumans() }}
+                                            </small>
+                                        </h4>
+                                        
+                                        <p class="card-text">
+                                            {{ $post->content }}
+                                        </p>
+                                    </div>
+
+                                    <div class="card-footer pb-5">
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
