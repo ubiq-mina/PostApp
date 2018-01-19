@@ -48,7 +48,27 @@
                                         </p>
                                     </div>
 
-                                    <div class="card-footer pb-5">
+                                    <div class="card-footer pb-4">
+                                        
+                                        @if (count($post->comments) > 0)
+                                            @foreach($post->comments as $comment)
+                                                <div class="card">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">
+                                                            <a href=#>{{ $comment->user->username }}</a><br/>
+                                                            <small>
+                                                                {{ $comment->created_at->diffForHumans() }}
+                                                            </small>
+                                                        </h5>
+                                                        
+                                                        <p class="card-text">
+                                                            {{ $comment->content }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+                                        @endif
+
                                     </div>
                                 </div>
                             @endforeach
