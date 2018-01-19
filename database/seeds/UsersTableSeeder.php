@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class PostsTableSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class PostsTableSeeder extends Seeder
      */
     public function run()
     {
-        $post = factory(PostApp\Post::class, 100)->create();
+        $user = factory(PostApp\User::class, 20)->create();
     }
 }

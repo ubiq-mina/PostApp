@@ -37,7 +37,7 @@
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href=#>Hello World</a><br/>
+                                            <a href=#>{{ $post->user->username }}</a><br/>
                                             <small>
                                                 {{ $post->created_at->diffForHumans() }}
                                             </small>

@@ -11,8 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::clashs);
+        // $this->call(UsersTableSeeder::class);
         $this->call(PostsTableSeeder::class);
+        
         // DB::table('users')->insert([
         //     'username' => str_random(10),
         //     'email' => str_random(10).'@gmail.com',

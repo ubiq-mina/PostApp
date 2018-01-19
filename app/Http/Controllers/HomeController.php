@@ -29,6 +29,7 @@ class HomeController extends Controller
         // return view('home');
 
         $posts = Post::orderBy('created_at', 'desc')->simplePaginate(15);
+        
         // return View::make('home')->with('posts', $posts);
         return view('home', ['posts' => $posts]);
     }
