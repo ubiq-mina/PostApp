@@ -2,10 +2,6 @@
 
 @section('title', 'Login')
 
-{{--  @section('navigation')
-    @parent
-@endsection  --}}
-
 @section('content')
 
     {!! Form::open(array('url' => 'home')) !!}

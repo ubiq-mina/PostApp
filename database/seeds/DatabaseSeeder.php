@@ -14,11 +14,5 @@ class DatabaseSeeder extends Seeder
         $this->call(UsersTableSeeder::class);
         $this->call(PostsTableSeeder::class);
         $this->call(CommentsTableSeeder::class);
-        
-        // DB::table('users')->insert([
-        //     'username' => str_random(10),
-        //     'email' => str_random(10).'@gmail.com',
-        //     'password' => bcrypt('secret'),
-        // ]);
     }
 }

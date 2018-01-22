@@ -25,8 +25,5 @@ class CommentController extends Controller
         $comment->save();
 
         return redirect('home');
-        // $get = Comment::orderBy('created_at', 'desc')->first()->content;
-
-        // echo $get;
     }
 }

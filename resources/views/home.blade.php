@@ -52,7 +52,7 @@
                                         
                                         @if (count($post->comments) > 0)
                                             @foreach($post->comments as $comment)
-                                                <div class="card mb-3">
+                                                <div class="card mb-3 wat" id="post-{{ $post->id }}">
                                                     <div class="card-body">
                                                         <h5 class="card-title">
                                                             <a href=#>{{ $comment->user->username }}</a><br/>
@@ -68,8 +68,6 @@
                                                 </div>
                                             @endforeach
                                         @endif
-
-                                        <!-- TODO: Add a way to input comments -->
                                         
                                         {!! Form::open(array('url' => '/comment', 'class' => 'form-inline')) !!}
 
