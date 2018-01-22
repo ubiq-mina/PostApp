@@ -15,13 +15,23 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
 
-                        Hello, {{ Auth::user()->username }}!
+                        <p>
+                            Hello, {{ Auth::user()->username }}!
+                        </p>
+
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                {{--  <h4 class="card-title">
+                                    Hi!
+                                </div>  --}}
+                                <a href="editprofile">
+                                    <p class="card-text">
+                                        Edit your profile
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -75,7 +85,7 @@
 
                                         <row class='container-fluid'>
                                             <div class='col-md-11'>
-                                                {!! Form::label('username', 'Username', ['class' => 'sr-only']); !!}
+                                                {!! Form::label('user', 'Username', ['class' => 'sr-only']); !!}
                                                 {!! Form::text('comment', '', ['class' => 'form-control', 'style' => 'width: 100%;']); !!}
                                                 {!! Form::hidden('post', $post->id); !!}
                                                 {!! Form::hidden('user', Auth::id()); !!}

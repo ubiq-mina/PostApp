@@ -28,6 +28,21 @@
     user-select: none;
 }
 
+.form-crumbs {
+    margin: auto;
+    width: 50%;
+    /* text-align: center; */
+}
+
+.form-crumb {
+    /* background-color: skyblue; */
+    /* border-radius: 50%; */
+}
+.form-crumb:hover {
+    /* background-color: lightgray; */
+    /* border-radius: 50% !important; */
+}
+
 #scroll-to-top:hover {
     color: white;
     background-color: lightgrey;

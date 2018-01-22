@@ -16,4 +16,21 @@ Auth::routes();
 Route::get('home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('profile/{id}', [
+    'as' => 'profile.view',
+    'uses' => 'ProfileController@create'
+]);
+
+Route::get('intro', [
+    'as' => 'profile.intro',
+    'uses' => 'ProfileController@checkForm'
+]);
+
+Route::post('intro', [
+    'as' => 'profile.intro',
+    'uses' => 'ProfileController@checkForm'
+]);
+
+Route::get('editprofile', 'EditProfileController@create');
+
 Route::post('comment', 'CommentController@submit')->name('home');

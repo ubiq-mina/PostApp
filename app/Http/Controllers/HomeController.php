@@ -5,7 +5,9 @@ namespace PostApp\Http\Controllers;
 use Illuminate\Http\Request;
 
 use PostApp\Post;
+use PostApp\Profile;
 use View;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -26,8 +28,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(15);
+        $user = Auth::user();
+        $profile = Profile::find($user->id);
+        if (!$profile) {
+            // TODO: Initiate intro sequence.
+            return view('intro', ['user' => $user]);
+        }
+
+        // $posts = Post::orderBy('created_at', 'desc')->simplePaginate(15);
         
-        return view('home', ['posts' => $posts]);
+        // return view('home', ['posts' => $posts]);
     }
 }
