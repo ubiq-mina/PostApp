@@ -71,12 +71,14 @@
 
                                         <!-- TODO: Add a way to input comments -->
                                         
-                                        {!! Form::open(array('url' => 'comment', 'class' => 'form-inline')) !!}
+                                        {!! Form::open(array('url' => '/comment', 'class' => 'form-inline')) !!}
 
                                         <row class='container-fluid'>
                                             <div class='col-md-11'>
                                                 {!! Form::label('username', 'Username', ['class' => 'sr-only']); !!}
                                                 {!! Form::text('comment', '', ['class' => 'form-control', 'style' => 'width: 100%;']); !!}
+                                                {!! Form::hidden('post', $post->id); !!}
+                                                {!! Form::hidden('user', Auth::id()); !!}
                                             </div>
                                             <div class='col-md-1'>
                                                 {!! Form::submit('Send', ['class' => 'btn btn-default pull-right']); !!}
