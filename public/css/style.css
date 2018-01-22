@@ -1,6 +1,34 @@
 
-.scroll-to-top {
-    background-color: blue;
-    width: 50px;
-    height: 50px;
+#scroll-to-top {
+    background-color: white;
+
+    display: none;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    margin: 20px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 2.5em;
+
+    border-radius: 50px;
+    border-bottom-style: solid;
+    border-width: 1pt;
+
+    cursor: pointer;
+
+    -moz-user-select: none;
+    user-select: none;
+}
+
+#scroll-to-top:hover {
+    color: white;
+    background-color: lightgrey;
 }

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
 
-        <div class="scroll-to-top"></div>
+        <div id="scroll-to-top">^</div>
 
         @guest
             <div class="col-md-8 mx-auto">
