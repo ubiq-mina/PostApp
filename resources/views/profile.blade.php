@@ -38,24 +38,28 @@
                             </p>
                         </div>
                     </div>
+
+                    <div class="card mb-3">
                     
-                    <div class="card-header">
-                            Contact Information
+                        <div class="card-header">
+                                Contact Information
+                            </div>
+
+                            <div class="card-body">
+                                <p class="card-text">
+
+                                    <p>
+                                        E-mail address: {!! $user->email !!}
+                                    </p>
+                                    
+                                    <p>
+                                        Mobile number: {!! $user->profile->mobile !!}
+                                    </p>
+
+                                </p>
+                            </div>
                         </div>
 
-                        <div class="card-body">
-                            <p class="card-text">
-
-                                <p>
-                                    E-mail address: {!! $user->email !!}
-                                </p>
-                                
-                                <p>
-                                    Mobile number: {!! $user->profile->mobile !!}
-                                </p>
-
-                            </p>
-                        </div>
                     </div>
 
                 </div>
