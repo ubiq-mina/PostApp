@@ -26,8 +26,8 @@ class ProfileFormRequest extends FormRequest
         return [
             'birthdate' => 'required|date',
             'country' => 'required|string',
-            'mobile-number' => 'required|numeric',
-            'gender' => 'required|string'
+            'mobile' => 'required|string',
+            'sex' => 'required|string'
         ];
     }
 }
