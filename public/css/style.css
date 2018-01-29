@@ -30,17 +30,32 @@
 
 .form-crumbs {
     margin: auto;
+    margin-bottom: 10px;
     width: 50%;
-    /* text-align: center; */
+    text-align: center;
+    background-color: white;
+}
+
+.form-crumb:before {
+    content: '' !important;
+    padding: 0 !important;
 }
 
 .form-crumb {
-    /* background-color: skyblue; */
-    /* border-radius: 50%; */
+    background-color: skyblue;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    text-decoration: none !important;
+    padding: 10px;
+    font-size: 2em;
+    margin: 10px;
+    color: white;
+    transition: all 0.5s ease;
 }
 .form-crumb:hover {
-    /* background-color: lightgray; */
-    /* border-radius: 50% !important; */
+    background-color: lightgray;
+    color: inherit;
 }
 
 #scroll-to-top:hover {

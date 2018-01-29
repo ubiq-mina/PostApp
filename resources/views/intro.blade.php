@@ -14,7 +14,7 @@
 
                 <div class="panel-body">
 
-                    <div class="form-crumbs">
+                    {{--  <div class="form-crumbs">
                         <ul class="nav nav-pills text-center">
                             <li class="nav-item form-crumb">
                                 <a class="nav-link" href="#">
@@ -27,7 +27,12 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div>  --}}
+                    <nav class="breadcrumb form-crumbs justify-content-center">
+                        <a class="breadcrumb-item form-crumb" href="#">1</a>
+                        <a class="breadcrumb-item form-crumb" href="#">2</a>
+                        <a class="breadcrumb-item form-crumb" href="#">3</a>
+                    </nav>
 
                     <div class="card mb-3">
 
