@@ -49,7 +49,7 @@
                                 <div class="card mb-3">
                                     <div class="card-body">
                                         <h4 class="card-title">
-                                            <a href=#>{{ $post->user->username }}</a><br/>
+                                            <a href=/profile/{{ $post->user->id }}>{{ $post->user->username }}</a><br/>
                                             <small>
                                                 {{ $post->created_at->diffForHumans() }}
                                             </small>
@@ -67,7 +67,7 @@
                                                 <div class="card mb-3 wat" id="post-{{ $post->id }}">
                                                     <div class="card-body">
                                                         <h5 class="card-title">
-                                                            <a href=#>{{ $comment->user->username }}</a><br/>
+                                                            <a href=/profile/{{ $comment->user->id }}>{{ $comment->user->username }}</a><br/>
                                                             <small>
                                                                 {{ $comment->created_at->diffForHumans() }}
                                                             </small>
