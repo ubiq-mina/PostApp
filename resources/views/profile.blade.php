@@ -24,15 +24,15 @@
                             <p class="card-text">
 
                                 <p>
-                                    Birthdate:
+                                    Birthdate: {!! $user->profile->birthdate !!}
                                 </p>
                                 
                                 <p>
-                                    Country:
+                                    Country: {!! $user->profile->country !!}
                                 </p>
                                 
                                 <p>
-                                    Gender:
+                                    Gender: {!! $user->profile->sex ? 'Female' : 'Male' !!}
                                 </p>
 
                             </p>
@@ -51,7 +51,7 @@
                                 </p>
                                 
                                 <p>
-                                    Mobile number:
+                                    Mobile number: {!! $user->profile->mobile !!}
                                 </p>
 
                             </p>
