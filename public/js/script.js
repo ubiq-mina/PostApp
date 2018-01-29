@@ -30,21 +30,32 @@ $(document).ready(function() {
             'url': 'intro/',
             'method': 'post',
             'beforeSend': console.log("Sending..."),
+            // AJAX version
             // 'data': {
             //     'data': JSON.stringify(objectifyForm($(this).serializeArray()))
             // },
-            'data': $(this).serialize(),
+            'data': $(this).serialize(), // Imitates the way the form data will be submitted when not AJAX
             'complete': function(data) {
-                console.log('Process complete.');
-                console.log(data);
+                // console.log('Process complete.');
+                // console.log(data);
             },
             'success': function(data) {
                 console.log('Yay');
                 console.log(data);
             },
             'error': function(data) {
-                var errors = data.responseJSON;
-                console.log(errors);
+                if (data['status'] == 422) { // If the form has validation errors
+                    var errors = data.responseJSON['errors'];
+                    // console.log(errors);
+
+                    for (var e in errors) {
+                        if (errors.hasOwnProperty(e)) {
+                            console.log(e + ': ' + errors[e]);
+                            var errorText = '<div class="alert alert-danger">' + errors[e] + '</div>'
+                            $('label[for=' + e + ']').after(errorText);
+                        }
+                    }
+                }
             }
         })
     });
