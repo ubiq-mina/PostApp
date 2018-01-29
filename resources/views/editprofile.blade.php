@@ -23,7 +23,7 @@
                             <p class="card-text"></p>
                             {!! $info = ""; !!}
                             
-                            {!! Form::model($info, array('url' => '/editprofile')) !!}
+                            {!! Form::model($info, array('url' => '/profile')) !!}
 
                             {{--  <row>  --}}
                                 {{--  <div class='col-md-11 form-group'>  --}}

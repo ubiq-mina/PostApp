@@ -41,16 +41,21 @@
                             {!! Form::open(array('url' => '/intro', 'id' => "personal-info")) !!}
 
                             {!! Form::label('birthdate', 'Birthdate'); !!}
-                            {!! Form::date('birthdate', '', ['class' => 'form-control']); !!}
+                            {!! Form::date('birthdate', '', ['class' => 'form-control mb-5']); !!}
 
                             {!! Form::label('country', 'Country'); !!}
-                            {!! Form::select('country', [null => 'Select a country', 'Philippines' => 'Philippines'], null, ['class' => 'form-control']); !!}
+                            {!! Form::select('country', [null => 'Select a country', 'Philippines' => 'Philippines'], null, ['class' => 'form-control mb-5']); !!}
 
-                            {!! Form::label('gender-male', 'Male'); !!}
+                            {!! Form::label('mobile-number', 'Mobile number') !!}
+                            {!! Form::text('mobile-number', '', ['class' => 'form-control mb-5']) !!}
+
+                            {!! Form::label('gender', 'Gender') !!} <br>
+
+                            {!! Form::label('gender-male', 'Male', ['class' => 'ml-3']); !!}
                             {!! Form::radio('gender', 'Male', false, ['id' => 'gender-male']); !!}
 
                             {!! Form::label('gender-female', 'Female'); !!}
-                            {!! Form::radio('gender', 'Female', false, ['id' => 'gender-female']); !!}
+                            {!! Form::radio('gender', 'Female', false, ['id' => 'gender-female', 'class' => 'mb-5']); !!} <br>
 
                             {{--  {!! Form::submit('Next', ['id' => 'personal-info', 'class' => 'btn btn-default']); !!}  --}}
                             <input type="submit" name="personal-info" class="btn btn-default" value="Next">

@@ -28,15 +28,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $profile = Profile::find($user->id);
-        if (!$profile) {
-            // TODO: Initiate intro sequence.
-            return view('intro', ['user' => $user]);
-        }
+        // $user = Auth::user();
+        // $profile = Profile::find($user->id);
+        // if (!$profile) {
+        //     // TODO: Initiate intro sequence.
+        //     return view('intro', ['user' => $user]);
+        // }
 
-        // $posts = Post::orderBy('created_at', 'desc')->simplePaginate(15);
+        $posts = Post::orderBy('created_at', 'desc')->simplePaginate(15);
         
-        // return view('home', ['posts' => $posts]);
+        return view('home', ['posts' => $posts]);
     }
 }

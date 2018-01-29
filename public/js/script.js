@@ -18,7 +18,7 @@ $(document).ready(function() {
 
     $('#personal-info').on('submit', function(e) {
         e.preventDefault();
-        console.log(JSON.stringify($(this).serializeArray()));
+        console.log(JSON.stringify(objectifyForm($(this).serializeArray())));
 
         $.ajaxSetup({
             headers: {
@@ -30,7 +30,10 @@ $(document).ready(function() {
             'url': 'intro/',
             'method': 'post',
             'beforeSend': console.log("Sending..."),
-            'data': {'data': JSON.stringify(objectifyForm($(this).serializeArray()))},
+            // 'data': {
+            //     'data': JSON.stringify(objectifyForm($(this).serializeArray()))
+            // },
+            'data': $(this).serialize(),
             'complete': function(data) {
                 console.log('Process complete.');
                 console.log(data);
@@ -38,6 +41,10 @@ $(document).ready(function() {
             'success': function(data) {
                 console.log('Yay');
                 console.log(data);
+            },
+            'error': function(data) {
+                var errors = data.responseJSON;
+                console.log(errors);
             }
         })
     });

@@ -22,13 +22,13 @@ Route::get('profile/{id}', [
 ]);
 
 Route::get('intro', [
-    'as' => 'profile.intro',
-    'uses' => 'ProfileController@checkForm'
+    'as' => 'profile.create',
+    'uses' => 'ProfileController@intro'
 ]);
 
 Route::post('intro', [
-    'as' => 'profile.intro',
-    'uses' => 'ProfileController@checkForm'
+    'as' => 'profile.store',
+    'uses' => 'ProfileController@store'
 ]);
 
 Route::get('editprofile', 'EditProfileController@create');
