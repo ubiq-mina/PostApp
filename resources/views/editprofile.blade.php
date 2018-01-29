@@ -26,10 +26,6 @@
     
                             <div class="card-body">
                                 <p class="card-text">
-
-                                    {!! $profile = Auth::user()->profile !!}
-                                    {!! $profile->birthdate = explode(' ', $profile->birthdate)[0] !!}
-                                    {!! $profile->sex = $profile->sex ? 'Female' : 'Male' !!}
                     
                                     {!! Form::model($profile, array('url' => '/intro', 'id' => "personal-info")) !!}
         

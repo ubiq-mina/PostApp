@@ -21,7 +21,6 @@ class ProfileController extends Controller
 
     public function store(ProfileFormRequest $request)
     {
-        echo 'Checking form...';
         // $validatedData = "";
         // $data = json_decode($_POST["data"]);
         // echo $_POST["data"];

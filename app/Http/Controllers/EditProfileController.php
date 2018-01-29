@@ -5,15 +5,16 @@ namespace PostApp\Http\Controllers;
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Session;
 Use View;
-use Session;
+use Auth;
 
 class EditProfileController extends Controller
 {
     public function create() {
-        // Session::flash('Hello', 'Hello');
-        Session::put('username', 'Hello');
 
-        // echo Session::get('username');
-        return view('editprofile');
+        $profile = Auth::user()->profile;
+        $profile->birthdate = explode(' ', $profile->birthdate)[0];
+        $profile->sex = $profile->sex ? 'Female' : 'Male';
+
+        return view('editprofile', ['profile' => $profile]);
     }
 }
