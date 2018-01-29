@@ -20,6 +20,8 @@ $(document).ready(function() {
         e.preventDefault();
         console.log(JSON.stringify(objectifyForm($(this).serializeArray())));
 
+        $('.alert-danger').remove();
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
