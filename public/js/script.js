@@ -20,7 +20,7 @@ $(document).ready(function() {
         e.preventDefault();
         console.log(JSON.stringify(objectifyForm($(this).serializeArray())));
 
-        $('.alert-danger').remove();
+        // $('.alert-danger').remove();
 
         $.ajaxSetup({
             headers: {
@@ -52,9 +52,20 @@ $(document).ready(function() {
 
                     for (var e in errors) {
                         if (errors.hasOwnProperty(e)) {
-                            console.log(e + ': ' + errors[e]);
+                            // console.log(e + ': ' + errors[e]);
                             var errorText = '<div class="alert alert-danger">' + errors[e] + '</div>'
-                            $('label[for=' + e + ']').after(errorText);
+
+                            var errorElement = $('label[for=' + e + ']').next();
+                            console.log(errorElement);
+
+                            if (!errorElement.hasClass('alert-danger')) {
+                                errorElement = 'label[for=' + e + ']';
+                                $(errorElement).after(errorText);
+                            }
+                            else {
+                                $(errorElement).text(errors[e]);
+                            }
+
                         }
                     }
                 }
