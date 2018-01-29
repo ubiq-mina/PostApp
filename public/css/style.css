@@ -43,14 +43,14 @@
 
 .form-crumb {
     background-color: skyblue;
+    color: white;
     border-radius: 50%;
     width: 70px;
     height: 70px;
+    font-size: 2em;
     text-decoration: none !important;
     padding: 10px;
-    font-size: 2em;
     margin: 10px;
-    color: white;
     transition: all 0.5s ease;
 }
 .form-crumb:hover {
