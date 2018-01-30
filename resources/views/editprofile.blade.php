@@ -18,6 +18,12 @@
                         Hello, {{ Auth::user()->username }}!
                     </p>
 
+                    {{--  @if ($errors->all())
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                    @endif  --}}
+
                     <div class="card mb-3">
 
                             <div class="card-header">
@@ -33,7 +39,7 @@
                                     {!! Form::date('birthdate', null, ['class' => 'form-control mb-5']); !!}
         
                                     {!! Form::label('country', 'Country'); !!}
-                                    {!! Form::select('country', [null => 'Select a country', 'Philippines' => 'Philippines'], null, ['class' => 'form-control mb-5']); !!}
+                                    {!! Form::select('country', $countriesSelect, null, ['class' => 'form-control mb-5']); !!}
         
                                     {!! Form::label('mobile', 'Mobile number') !!}
                                     {!! Form::text('mobile', null, ['class' => 'form-control mb-5']) !!}
@@ -45,6 +51,8 @@
         
                                     {!! Form::label('gender-female', 'Female'); !!}
                                     {!! Form::radio('sex', 'Female', false, ['id' => 'gender-female', 'class' => 'mb-5']); !!} <br>
+
+                                    {!! Form::hidden('id', $profile->id); !!}
         
                                     {{--  {!! Form::submit('Next', ['id' => 'personal-info', 'class' => 'btn btn-default']); !!}  --}}
                                     <input type="submit" name="personal-info" class="btn btn-default" value="Save">

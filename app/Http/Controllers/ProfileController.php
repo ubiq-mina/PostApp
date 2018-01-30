@@ -9,6 +9,7 @@ use PostApp\Profile;
 
 use View;
 use Auth;
+use Gate;
 use PostApp\Http\Requests\ProfileFormRequest;
 
 class ProfileController extends Controller
@@ -34,16 +35,21 @@ class ProfileController extends Controller
         // }
 
         // TODO: Perform stronger validation
-        $profile = Auth::user()->profile;
-        $profile->user_id = Auth::user()->id;
-        $profile->birthdate = $request->birthdate;
-        $profile->country = $request->country;
-        $profile->sex = $request->sex == 'Male' ? 0 : 1;
-        $profile->mobile = $request->mobile;
+        $profile = Profile::find($request->id);
+        if (Gate::allows('update-profile', $profile)) {
+            $profile->birthdate = $request->birthdate;
+            $profile->country = $request->country;
+            $profile->sex = $request->sex == 'Male' ? 0 : 1;
+            $profile->mobile = $request->mobile;
 
-        $profile->save();
+            $profile->save();
 
-        return view('profile', ['user' => Auth::user()]);
+            return view('profile', ['user' => Auth::user()]);
+        }
+        else {
+            return response('Unauthorized.', 401);
+        }
+
     }
 
     public function create($id)
