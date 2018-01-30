@@ -11,6 +11,16 @@ use Auth;
 
 class EditProfileController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function create() {
 
         $profile = Auth::user()->profile;
