@@ -14,6 +14,12 @@
 
                 <div class="panel-body">
 
+                    @if (Auth::user()->id == $user->id)
+                        <p class="ml-3">
+                            <a href="/editprofile">Edit</a>
+                        </p>
+                    @endif
+
                     <div class="card mb-3">
 
                         <div class="card-header">
